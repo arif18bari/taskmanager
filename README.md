@@ -1,8 +1,10 @@
-# taskmanager
-TTask manager REST API
+Task manager REST API
+
+
+
 
 Create DB and REST API for task managing using JSON format for interchange.
-— create database taskmanagerdb and change application properties according to your mysql credential.
+--- create database taskmanagerdb and change application properties according to your mysql credential.
 
 Secure endpoints with Spring Security. There should be two roles: USER and ADMIN.
 
