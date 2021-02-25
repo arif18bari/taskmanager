@@ -2,7 +2,7 @@
 
 Manage your task digitally using API
 
-## DB design and develop
+## DB design and development
 
 --- Create database taskmanagerdb and change application. properties file according to your MySQL credential. The tables will be created automatically during the project run from the code ide like Intellij Idea.
 
@@ -13,6 +13,7 @@ password: testuser
 Test Admin user: test@admin.com
  
 password: testadmin
+## API endpoints for testing
 
 ```bash
 • Create a project like (http://localhost:8888/taskmanager/projects    Use POST)
