@@ -14,7 +14,7 @@ Test Admin user: test@admin.com
  
 password: testadmin
 ## API endpoints for testing
-
+For run the project 
 ```bash
 • Create a project like (http://localhost:8888/taskmanager/projects    Use POST)
 Sample JSON format such as following
