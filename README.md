@@ -1,18 +1,21 @@
-Task manager REST API
+T# Task manager REST API
+
+Manage your task digitally using API
+
+## DB design and develop
+
+--- Create database taskmanagerdb and change application. properties file according to your MySQL credential. The tables will be created automatically during the project run from the code ide like Intellij Idea.
+
+• Create a project like (http://localhost:8888/taskmanager/projects    Use POST)
+Sample JSON format such as following
 
 
-
-
-Create DB and REST API for task managing using JSON format for interchange.
---- create database taskmanagerdb and change application properties according to your mysql credential.
-
-Secure endpoints with Spring Security. There should be two roles: USER and ADMIN.
-
-USER can only access own tasks and projects
-Authentication credentials should be stored in DB
-USER and ADMIN should be able to:
-• Create project
-• Get all projects
+```bash
+	{
+        "projectName": "FirstProject"
+    	}
+```
+• Get all projects (http://localhost:8888/taskmanager/projects    Use GET)
 • Delete project
 • Create task
 • Edit task (change description, status, due date). Closed tasks cannot be edited.
