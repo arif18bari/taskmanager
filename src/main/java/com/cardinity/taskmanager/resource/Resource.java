@@ -17,7 +17,7 @@ import javax.ws.rs.Consumes;
 public interface Resource<T> {
     @GetMapping
     @Consumes(value = MediaType.APPLICATION_JSON_VALUE)
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
     ResponseEntity<Collection<T>> findAll();
 
     @GetMapping("{id}")

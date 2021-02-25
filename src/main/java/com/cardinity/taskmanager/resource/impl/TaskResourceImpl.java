@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.Consumes;
@@ -38,17 +39,20 @@ public class TaskResourceImpl  implements Resource<Task> {
    @Autowired
     private TaskRepository taskRepository;
     @Override
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Collection<Task>> findAll() {
         log.info("TaskResourceImpl - findAll");
         return new ResponseEntity<>(taskService.findAll(), HttpStatus.OK);
     }
     @GetMapping("/all/dueTask")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Collection<Task>> getAllTaskByDuedate() {
         log.info("TaskResourceImpl - findAll");
         return new ResponseEntity<>(taskmanagerService.getAllTaskByDuedate(), HttpStatus.OK);
     }
 
     @GetMapping("/all/{projectId}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Collection<Task>> findByProject(@PathVariable Long projectId) {
         log.info("TaskResourceImpl - findAll");
         Optional<Project> project =projectervice.findById(projectId) ;
@@ -61,6 +65,7 @@ public class TaskResourceImpl  implements Resource<Task> {
     }
 
     @GetMapping("/all")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Collection<Task>> findByStatus(@RequestParam String status) {
         log.info("TaskResourceImpl - findAll");
         TaskStatus   status1;
